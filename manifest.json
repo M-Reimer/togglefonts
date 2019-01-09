@@ -1,0 +1,41 @@
+{
+  "manifest_version": 2,
+  "name": "Toggle Fonts",
+  "version": "1.0.0",
+
+  "description": "__MSG_extensionDescription__",
+
+  "applications": {
+    "gecko": {
+      "id": "{e7625f06-e252-479d-ac7a-db68aeaff2cb}",
+      "strict_min_version": "61.0"
+    }
+  },
+
+  "icons": {
+    "24": "icons/togglefonts.svg",
+    "32": "icons/togglefonts.svg",
+    "50": "icons/togglefonts.svg"
+  },
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "browser_action": {
+    "browser_style": true,
+    "default_icon": "icons/togglefonts.svg",
+    "default_title": "__MSG_button_title__",
+    "theme_icons": [{
+      "dark": "icons/togglefonts.svg",
+      "light": "icons/togglefonts-light.svg",
+      "size": 19
+    }]
+  },
+
+  "permissions": [
+    "browserSettings"
+  ],
+
+  "default_locale": "en"
+}

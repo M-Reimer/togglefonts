@@ -1,0 +1,11 @@
+{
+  "extensionDescription": {
+    "message": "Disables or enables the use of fonts specified by the web page.",
+    "description": "Description of the extension."
+  },
+
+  "button_title": {
+    "message": "Fonts",
+    "description": "Text displayed next to button or as tooltip of the button"
+  }
+}

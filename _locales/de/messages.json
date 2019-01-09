@@ -1,0 +1,11 @@
+{
+  "extensionDescription": {
+    "message": "Deaktiviert, bzw. aktiviert das Nutzen der von der Webseite festgelegten Schriftarten",
+    "description": "Description of the extension."
+  },
+
+  "button_title": {
+    "message": "Schriftarten",
+    "description": "Text displayed next to button or as tooltip of the button"
+  }
+}
