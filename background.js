@@ -26,16 +26,23 @@ async function ToolbarButtonClicked() {
 
 // Sets browserAction badge text based on font status.
 async function UpdateBadge() {
-  let value = (await browser.browserSettings.useDocumentFonts.get({})).value;
-  if (value)
-    browser.browserAction.setBadgeText({text: ""});
-  else
-    browser.browserAction.setBadgeText({text: "X"});
+  const value = (await browser.browserSettings.useDocumentFonts.get({})).value;
+  const badgetext = value ? "" : "X";
+  const title = browser.i18n.getMessage("button_title") + " (" +
+      browser.i18n.getMessage(value ? "title_enabled" : "title_disabled") +
+      ")";
+
+  if (browser.browserAction.setBadgeText !== undefined) // Not Android
+    browser.browserAction.setBadgeText({text: badgetext});
+  browser.browserAction.setTitle({title: title});
 }
 
 // Set background color to a non-intrusive gray
-browser.browserAction.setBadgeBackgroundColor({color: "#666666"});
+if (browser.browserAction.setBadgeBackgroundColor !== undefined) // Not Android
+  browser.browserAction.setBadgeBackgroundColor({color: "#666666"});
 
 // Register event listeners
 browser.browserAction.onClicked.addListener(ToolbarButtonClicked);
+
+// Update badge for the first time
 UpdateBadge();
