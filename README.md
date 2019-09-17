@@ -1,5 +1,5 @@
 Toggle Fonts
-====================
+============
 
 Main repository: https://github.com/M-Reimer/togglefonts.
 
